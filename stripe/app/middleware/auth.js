@@ -13,13 +13,6 @@ const Op = db.Sequelize.Op;
 var pluck = require('arr-pluck');
 // Protected Routes
 
-// exports.isSignedIn = expressJwt({
-//     secret : process.env.SECRET,
-//     userProperty : "auth"
-// },function(req, res) {
-//   console.log(req.user);
-//   console.log('Hello');
-// })
 exports.verifyToken = async (req, res, next) => {
   const token = req.headers["x-access-token"];
 
