@@ -5,7 +5,7 @@ const db = require("../models");
 const User = db.user;
 
 const {getPlan} = require("../controllers/plan");
-const {verifyToken,isAccountCheck,roleCheck} = require("../controllers/auth");
+const {verifyToken,isAccountCheck,roleCheck} = require("../middleware/auth");
 
 
 router.post("/get-plan",getPlan);
