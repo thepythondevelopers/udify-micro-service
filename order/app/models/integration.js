@@ -1,6 +1,4 @@
 require('dotenv').config();
-const Cryptr = require('cryptr');
-const cryptr = new Cryptr(process.env.CRYPTR_KEY);
 module.exports = (sequelize, Sequelize) => {
     const Integration = sequelize.define("integration", {
       guid : {
@@ -10,13 +8,7 @@ module.exports = (sequelize, Sequelize) => {
       store_api_key: {
         type: Sequelize.CHAR(32),
         required : true,
-        allowNull: false,
-        // get() {
-        //   return cryptr.decrypt(this.getDataValue('store_api_key')); 
-        // },
-        // set(value) {
-        //   this.setDataValue('store_api_key',cryptr.encrypt(value));
-        // }
+        allowNull: false
       },
       store_api_secret: {
         type: Sequelize.CHAR(32),
